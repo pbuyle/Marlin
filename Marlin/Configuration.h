@@ -218,7 +218,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 
 // default settings 
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,2560,760*1.1}  // default steps per unit for ultimaker 
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80 * (100 / 105.0), 80 * (100 / 101.1), 2560, 760 * 1.25}
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 5, 45}    // (mm/sec)    
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
@@ -250,7 +250,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 //#define SDSUPPORT // Enable SD Card Support in Hardware Console
 
 //#define ULTIMAKERCONTROLLER //as available from the ultimaker online store.
-//#define ULTIPANEL  //the ultipanel as on thingiverse
+#define ULTIPANEL  //the ultipanel as on thingiverse
 
 
 #ifdef ULTIMAKERCONTROLLER    //automatic expansion
