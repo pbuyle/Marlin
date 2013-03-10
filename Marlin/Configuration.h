@@ -1,4 +1,4 @@
-#ifndef CONFIGURATION_H
+  #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 
 // This configurtion file contains the basic settings.
@@ -317,11 +317,11 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 //#define SDSUPPORT // Enable SD Card Support in Hardware Console
 
 //#define ULTIMAKERCONTROLLER //as available from the ultimaker online store.
-#define ULTIPANEL  //the ultipanel as on thingiverse
+//#define ULTIPANEL  //the ultipanel as on thingiverse
 
 // The RepRapDiscount Smart Controller (white PCB)
 // http://reprap.org/wiki/RepRapDiscount_Smart_Controller
-//#define REPRAP_DISCOUNT_SMART_CONTROLLER
+#define REPRAP_DISCOUNT_SMART_CONTROLLER
 
 // The GADGETS3D G3D LCD/SD Controller (blue PCB)
 // http://reprap.org/wiki/RAMPS_1.3/1.4_GADGETS3D_Shield_with_Panel
