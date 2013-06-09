@@ -3,13 +3,13 @@
 
 // NOTE: IF YOU CHANGE THIS FILE / MERGE THIS FILE WITH CHANGES
 //
-//   ==> ALWAYS TRY TO COMPILE MARLIN WITH/WITHOUT "ULTIPANEL" / "ULTRALCD" / "SDSUPPORT" #define IN "Configuration.h" 
-//   ==> ALSO TRY ALL AVAILABLE "LANGUAGE_CHOICE" OPTIONS
+//   ==&gt; ALWAYS TRY TO COMPILE MARLIN WITH/WITHOUT "ULTIPANEL" / "ULTRALCD" / "SDSUPPORT" #define IN "Configuration.h" 
+//   ==&gt; ALSO TRY ALL AVAILABLE "LANGUAGE_CHOICE" OPTIONS
 
 // Languages
 // 1  English
 // 2  Polish
-// 3  French	(awaiting translation!)
+// 3  French
 // 4  German
 // 5  Spanish
 // 6  Russian
@@ -26,6 +26,9 @@
 #if MOTHERBOARD == 7 || MOTHERBOARD == 71
 	#define MACHINE_NAME "Ultimaker"
 	#define FIRMWARE_URL "http://firmware.ultimaker.com"
+#elif MOTHERBOARD == 80
+	#define MACHINE_NAME "Rumba"
+	#define FIRMWARE_URL "https://github.com/ErikZalm/Marlin/"
 #else
 	#define MACHINE_NAME "Mendel"
 	#define FIRMWARE_URL "http://www.mendel-parts.com"
@@ -73,6 +76,8 @@
 	#define MSG_PID_C "PID-C"
 	#define MSG_ACC  "Accel"
 	#define MSG_VXY_JERK "Vxy-jerk"
+	#define MSG_VZ_JERK "Vz-jerk"
+	#define MSG_VE_JERK "Ve-jerk"
 	#define MSG_VMAX "Vmax "
 	#define MSG_X "x"
 	#define MSG_Y "y"
@@ -93,13 +98,13 @@
 	#define MSG_LOAD_EPROM "Load memory"
 	#define MSG_RESTORE_FAILSAFE "Restore Failsafe"
 	#define MSG_REFRESH "Refresh"
-	#define MSG_WATCH "Watch"
+	#define MSG_WATCH "Info screen"
 	#define MSG_PREPARE "Prepare"
 	#define MSG_TUNE "Tune"
 	#define MSG_PAUSE_PRINT "Pause Print"
 	#define MSG_RESUME_PRINT "Resume Print"
 	#define MSG_STOP_PRINT "Stop Print"
-	#define MSG_CARD_MENU "Card Menu"
+	#define MSG_CARD_MENU "Print from SD"
 	#define MSG_NO_CARD "No Card"
 	#define MSG_DWELL "Sleep..."
 	#define MSG_USERWAIT "Wait for user..."
@@ -230,6 +235,8 @@
 	#define MSG_PID_C "PID-C"
 	#define MSG_ACC  "Acc"
 	#define MSG_VXY_JERK "Zryw Vxy"
+	#define MSG_VZ_JERK "Zryw Vz"
+	#define MSG_VE_JERK "Zryw Ve"
 	#define MSG_VMAX "Vmax"
 	#define MSG_X "x"
 	#define MSG_Y "y"
@@ -388,7 +395,9 @@
 #define MSG_PID_D " PID-D: "
 #define MSG_PID_C " PID-C: "
 #define MSG_ACC " Acc:"
-#define MSG_VXY_JERK " Vxy-jerk: "
+#define MSG_VXY_JERK "Vxy-jerk"
+#define MSG_VZ_JERK "Vz-jerk"
+#define MSG_VE_JERK "Ve-jerk"
 #define MSG_VMAX " Vmax "
 #define MSG_X "x:"
 #define MSG_Y "y:"
@@ -552,6 +561,8 @@
 	#define MSG_PID_C            "PID-C"
 	#define MSG_ACC              "Acc"
 	#define MSG_VXY_JERK         "Vxy-jerk"
+	#define MSG_VZ_JERK          "Vz-jerk"
+	#define MSG_VE_JERK          "Ve-jerk"
 	#define MSG_VMAX             "Vmax "
 	#define MSG_X                "x"
 	#define MSG_Y                "y"
@@ -691,9 +702,9 @@
 #define MSG_PREHEAT_ABS_SETTINGS " Ajustar temp. ABS"
 #define MSG_MOVE_AXIS " Mover Ejes      \x7E"
 #define MSG_SPEED " Velocidad:"
-#define MSG_NOZZLE " \002Nozzle:"
-#define MSG_NOZZLE1 " \002Nozzle2:"
-#define MSG_NOZZLE2 " \002Nozzle3:"
+#define MSG_NOZZLE " \002Fusor:"
+#define MSG_NOZZLE1 " \002Fusor2:"
+#define MSG_NOZZLE2 " \002Fusor3:"
 #define MSG_BED " \002Base:"
 #define MSG_FAN_SPEED " Ventilador:"
 #define MSG_FLOW " Flujo:"
@@ -709,7 +720,9 @@
 #define MSG_PID_D " PID-D: "
 #define MSG_PID_C " PID-C: "
 #define MSG_ACC  " Acc:"
-#define MSG_VXY_JERK " Vxy-jerk: "
+#define MSG_VXY_JERK " Vxy-agit: "
+#define MSG_VZ_JERK "Vz-agit"
+#define MSG_VE_JERK "Ve-agit"
 #define MSG_VMAX " Vmax "
 #define MSG_X "x:"
 #define MSG_Y "y:"
@@ -804,7 +817,7 @@
 #define MSG_M119_REPORT "Comprobando fines de carrera."
 #define MSG_ENDSTOP_HIT "PULSADO"
 #define MSG_ENDSTOP_OPEN "abierto"
-#define MSG_HOTEND_OFFSET "Hotend offsets:"
+#define MSG_HOTEND_OFFSET "Despl. Hotend:"
         
 #define MSG_SD_CANT_OPEN_SUBDIR "No se pudo abrir la subcarpeta."
 #define MSG_SD_INIT_FAIL "Fallo al iniciar la SD"
@@ -868,6 +881,8 @@
 #define MSG_PID_C							" PID-C: "
 #define MSG_ACC								" Acc:"
 #define MSG_VXY_JERK						" Vxy-jerk: "
+#define MSG_VZ_JERK                         "Vz-jerk"
+#define MSG_VE_JERK                         "Ve-jerk"
 #define MSG_VMAX							" Vmax "
 #define MSG_X								"x:"
 #define MSG_Y								"y:"
@@ -1021,6 +1036,8 @@
 	#define MSG_PID_C                "PID-C"
 	#define MSG_ACC                  "Accel"
 	#define MSG_VXY_JERK             "Vxy-jerk"
+	#define MSG_VZ_JERK              "Vz-jerk"
+	#define MSG_VE_JERK              "Ve-jerk"
 	#define MSG_VMAX                 "Vmax"
 	#define MSG_X                    "x"
 	#define MSG_Y                    "y"
@@ -1181,6 +1198,8 @@
 	#define MSG_PID_C " PID-C: "
 	#define MSG_ACC  " Acc:"
 	#define MSG_VXY_JERK " Vxy-jerk: "
+	#define MSG_VZ_JERK "Vz-jerk"
+	#define MSG_VE_JERK "Ve-jerk"
 	#define MSG_VMAX " Vmax "
 	#define MSG_X "x:"
 	#define MSG_Y "y:"
@@ -1347,6 +1366,8 @@
 	#define MSG_PID_C "PID-C"
 	#define MSG_ACC  "Kiihtyv"
 	#define MSG_VXY_JERK "Vxy-jerk"
+	#define MSG_VZ_JERK "Vz-jerk"
+	#define MSG_VE_JERK "Ve-jerk"
 	#define MSG_VMAX "Vmax "
 	#define MSG_X "x"
 	#define MSG_Y "y"
